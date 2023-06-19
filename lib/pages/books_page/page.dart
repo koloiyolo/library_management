@@ -114,6 +114,7 @@ class _BooksPageState extends State<BooksPage> {
                                                       name.text,
                                                       surname.text,
                                                       category.text);
+                                                      library.put('books', toListOfLists(bookList));
                                                 });
                                                 Navigator.pop(context);
                                               }),
@@ -159,6 +160,7 @@ class _BooksPageState extends State<BooksPage> {
                     onPressed: () {
                       setState(() {
                         addOne(bookList[index].bookId);
+                        library.put('unit', toListOfLists(unitList));
                       });
                     },
                     child: const Icon(Icons.add))
@@ -169,6 +171,7 @@ class _BooksPageState extends State<BooksPage> {
                   ? () {
                       setState(() {
                         returnBook(currentCustomerId, current[index].bookId);
+                        library.put('unit', toListOfLists(unitList));
                       });
                     }
                   : (currentCustomerId != 0 &&
@@ -177,6 +180,7 @@ class _BooksPageState extends State<BooksPage> {
                           setState(() {
                             borrowBook(
                                 currentCustomerId, current[index].bookId);
+                                library.put('unit', toListOfLists(unitList));
                           });
                         }
                       : () {
@@ -246,6 +250,7 @@ class _BooksPageState extends State<BooksPage> {
                                                       int.parse(author.text);
                                                   current[index].type =
                                                       category.text;
+                                                  library.put('books', toListOfLists(bookList));
                                                 });
                                                 Navigator.pop(context);
                                               }),
@@ -281,6 +286,7 @@ class _BooksPageState extends State<BooksPage> {
                     onPressed: () {
                       setState(() {
                         removeOne(bookList[index].bookId);
+                        library.put('unit', toListOfLists(unitList));
                       });
                     },
                     child: const Icon(Icons.remove))

@@ -1,8 +1,18 @@
+import 'package:library_management/db/db.dart';
 import 'package:library_management/scaffold.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'imports.dart';
 
-void main() {
+late Box library;
+
+Future<void> main() async {
+
+  await Hive.initFlutter();
+  library = await Hive.openBox('library');
+  checkDatabases();
+
+
   runApp(const MyApp());
 }
 

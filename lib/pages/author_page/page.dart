@@ -26,7 +26,65 @@ class _AuthorPageState extends State<AuthorPage> {
                   child: Align(
                       alignment: Alignment.bottomRight,
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {showDialog(
+                          context: context,
+                          builder: (context) {
+                            var name = TextEditingController();
+                            var surname = TextEditingController();
+                            return AlertDialog(
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Text("Add new author"),
+                                  const SizedBox(height: 8),
+                                  TextField(
+                                    controller: name,
+                                    decoration:
+                                        const InputDecoration(hintText: "name"),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  TextField(
+                                    controller: surname,
+                                    decoration: const InputDecoration(
+                                        hintText: "surname"),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Card(
+                                        child: MaterialButton(
+                                            child: const Text(
+                                              "Cancel",
+                                              style: TextStyle(fontSize: 20),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            }),
+                                      ),
+                                      Card(
+                                        child: MaterialButton(
+                                            child: const Text(
+                                              "Add",
+                                              style: TextStyle(fontSize: 20),
+                                            ),
+                                            onPressed: () {
+                                              setState(() {
+                                                createAuthor(
+                                                    name.text, surname.text);
+                                                  library.put('authors', toListOfLists(authorList));
+                                              });
+                                              Navigator.pop(context);
+                                            }),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        );},
                         child: const Icon(Icons.add, size: 48),
                       )),
                 )

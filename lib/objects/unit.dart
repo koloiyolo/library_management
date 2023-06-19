@@ -7,6 +7,24 @@ class Unit {
   int customerId;
 
   Unit({required this.unitId, required this.customerId, required this.bookId});
+
+  factory Unit.fromList(List list) => Unit(
+      unitId: list.elementAt(0),
+      bookId: list.elementAt(1),
+      customerId: list.elementAt(2),
+      );
+
+  List toList() {
+    return List.from([unitId, bookId, customerId]);
+  }
+}
+
+List<Unit> toListOfUnits (List list){
+  List<Unit> dummy = [];
+  for (var element in list){
+    dummy.add(Unit.fromList(element));
+  }
+  return dummy;
 }
 
 int howMany(int bookId) {

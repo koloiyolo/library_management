@@ -3,16 +3,36 @@ import 'package:library_management/imports.dart';
 class Book {
   int bookId;
   String title;
-  int authorId;
   String type;
+  int authorId;
 
   Book({
     required this.bookId,
     required this.title,
+    required this.type,
     required this.authorId,
-    required this.type
   });
+
+   factory Book.fromList(List list) => Book(
+      bookId: list.elementAt(0),
+      title: list.elementAt(1),
+      type: list.elementAt(2),
+      authorId: list.elementAt(3),
+      );
+
+  List toList() {
+    return List.from([bookId, title, type, authorId]);
+  }
 }
+
+List<Book> toListOfBooks (List list){
+  List<Book> dummy = [];
+  for (var element in list){
+    dummy.add(Book.fromList(element));
+  }
+  return dummy;
+}
+
 
 
 List<Book> filterType(String type){

@@ -87,6 +87,7 @@ class _CustomerPageState extends State<CustomerPage> {
                                               setState(() {
                                                 addCustomer(
                                                     name.text, surname.text);
+                                                  library.put('customers', toListOfLists(customerList));
                                               });
                                               Navigator.pop(context);
                                             }),
