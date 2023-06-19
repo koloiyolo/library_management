@@ -160,7 +160,7 @@ class _BooksPageState extends State<BooksPage> {
                     onPressed: () {
                       setState(() {
                         addOne(bookList[index].bookId);
-                        library.put('unit', toListOfLists(unitList));
+                        library.put('units', toListOfLists(unitList));
                       });
                     },
                     child: const Icon(Icons.add))
@@ -171,7 +171,7 @@ class _BooksPageState extends State<BooksPage> {
                   ? () {
                       setState(() {
                         returnBook(currentCustomerId, current[index].bookId);
-                        library.put('unit', toListOfLists(unitList));
+                        library.put('units', toListOfLists(unitList));
                       });
                     }
                   : (currentCustomerId != 0 &&
@@ -180,7 +180,7 @@ class _BooksPageState extends State<BooksPage> {
                           setState(() {
                             borrowBook(
                                 currentCustomerId, current[index].bookId);
-                                library.put('unit', toListOfLists(unitList));
+                                library.put('units', toListOfLists(unitList));
                           });
                         }
                       : () {
@@ -286,7 +286,7 @@ class _BooksPageState extends State<BooksPage> {
                     onPressed: () {
                       setState(() {
                         removeOne(bookList[index].bookId);
-                        library.put('unit', toListOfLists(unitList));
+                        library.put('units', toListOfLists(unitList));
                       });
                     },
                     child: const Icon(Icons.remove))
