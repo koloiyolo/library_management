@@ -15,7 +15,7 @@ class _AuthorPageState extends State<AuthorPage> {
         children: [
           GridView.builder(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
+                  maxCrossAxisExtent: 330,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20),
               itemCount: authorList.length,
