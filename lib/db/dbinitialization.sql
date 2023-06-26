@@ -79,25 +79,24 @@ INSERT INTO book (bookid, title, type, author_authorid) VALUES (8, 'IT', 'Horror
 -- customer
 INSERT INTO customer (id, name, surname) VALUES (1, 'Jakub', 'Kolodziej');
 INSERT INTO customer (id, name, surname) VALUES (2, 'Roman', 'Siminski');
-INSERT INTO customer (id, name, surname) VALUES (2, 'Jan', 'Kowalski');
-INSERT INTO customer (id, name, surname) VALUES (2, 'Mateusz', 'Morawiecki');
+INSERT INTO customer (id, name, surname) VALUES (3, 'Jan', 'Kowalski');
+INSERT INTO customer (id, name, surname) VALUES (4, 'Mateusz', 'Morawiecki');
 
 -- unit
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (1, 0, 1);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (1, 1, 0);
 INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (2, 1, 1);
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (3, 0, 1);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (3, 1, 0);
 
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (4, 0, 2);
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (5, 0, 2);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (4, 2, 0);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (5, 2, 0);
 
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (6, 2, 3);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (6, 3, 2);
 
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (7, 2, 4);
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (8, 1, 4);
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (9, 0, 4);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (7, 4, 2);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (8, 4, 1);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (9, 4, 0);
 
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (10, 1, 5);
-INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (11, 0, 5);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (10, 5, 1);
+INSERT INTO unit (unitid, book_bookid, customer_id) VALUES (11, 5, 0);
 
-
-
+COMMIT;
