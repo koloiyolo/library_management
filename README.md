@@ -1,6 +1,6 @@
 # library_management
 
-A new Flutter project.
+Flutter/Dart version of my Uni 4th semester Uni project
 
 ## Getting Started
 
